@@ -1,0 +1,108 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@theme {
+  --font-serif: "Georgia", serif;
+  --font-mono: "Courier Prime", "Courier New", Courier, monospace;
+}
+
+:root {
+  --color-gold: #C29958;
+  --color-dark: #12100E;
+  --color-dark-alt: #1A1614;
+  --color-cream: #E6D5B8;
+}
+
+body {
+  background-color: var(--color-dark);
+  color: var(--color-cream);
+  font-family: var(--font-serif);
+}
+
+.vintage-border {
+  border: 8px double var(--color-gold);
+  border-radius: 20px;
+  outline: 2px solid var(--color-dark);
+  outline-offset: -5px;
+}
+
+.paper-texture {
+  background-color: var(--color-dark-alt);
+  background-image: radial-gradient(#26221F 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+.distressed-box {
+  border: 1px dashed rgba(194, 153, 88, 0.4);
+  border-radius: 20px;
+  position: relative;
+  transition: border-color 0.2s;
+}
+
+.distressed-box:hover {
+  border-color: var(--color-gold);
+}
+
+.btn-vintage {
+  background-color: var(--color-gold);
+  color: var(--color-dark);
+  font-family: var(--font-mono);
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all 0.2s;
+  border: 2px solid var(--color-dark);
+  border-radius: 20px;
+  box-shadow: 4px 4px 0px #4A3B22;
+}
+
+.btn-vintage:hover {
+  transform: translate(1px, 1px);
+  box-shadow: 2px 2px 0px #4A3B22;
+}
+
+.btn-vintage:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.badge-stamp {
+  transform: rotate(-5deg);
+  border: 3px double var(--color-gold);
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  color: var(--color-gold);
+  font-weight: bold;
+  text-transform: uppercase;
+  display: inline-block;
+  background: rgba(194, 153, 88, 0.05);
+}
+
+.status-led {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #4CAF50;
+  box-shadow: 0 0 5px #4CAF50;
+}
+
+.status-led.waiting {
+  background-color: #f4b400;
+  box-shadow: 0 0 5px #f4b400;
+}
+
+/* Base loading spinner */
+.loader {
+  border: 2px solid rgba(194, 153, 88, 0.2);
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border-left-color: var(--color-gold);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}

@@ -1,0 +1,6 @@
+{
+  "name": "Face Rater",
+  "description": "A vintage-themed face analyzer and rater that uses face-api.js to detect gender and skin tone to provide personalized ratings and compliments.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
