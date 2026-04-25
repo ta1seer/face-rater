@@ -219,12 +219,12 @@
     <script>
         const COMPLIMENTS = {
             male: {
-                dark: ["Apnar chehara ekjon utkrishto maner niggar moto", "Nijer chobi upload diben, kalo kuttar na", "Apni mone hoi diddy vai er chele"],
-                fair: ["Apnar modde jonny vai ke tokkor dewar potential ache", "Ei chehara diye tur biye hobe na", "Apnar chehara ekjon shada niggar moto"]
+                dark: ["Apnar chehara ekjon utkrishto maner niggar moto", "Nijer chobi upload diben, kalo kuttar na", "Apni mone hoi diddy vai er chele", "Ei chehara diye tur biye hobe na", "Ei chehara dekhle, apnar bow palai jabe"],
+                fair: ["Apnar modde jonny vai ke tokkor dewar potential ache", "Ei chehara diye tur biye hobe na", "Apnar chehara ekjon shada niggar moto", "Nijer chobi upload diben, banorer na", "Ei chehara dekhle, apnar bow palai jabe"]
             },
             female: {
-                dark: ["Apni mone hoi koilar khonite kaj koren", "Fokinni chehara, dure giya mor", "Nijer chobi upload diben, chagoler na"],
-                fair: ["Nijer chobi upload diben, banorer na", "Apu mone hoi moidar bebsha koren", "Fokinni chehara, dure giya mor"]
+                dark: ["Apnar chehara dekhle manush voi pete pare", "Fokinni chehara, dure giya mor", "Nijer chobi upload diben, chagoler na", "Nijer chobi upload diben, banorer na"],
+                fair: ["Nijer chobi upload diben, banorer na", "Apu mone hoi onek beshi moida use koren", "Fokinni chehara, dure giya mor", "Nijer chobi upload diben, chagoler na"]
             }
         };
 
@@ -327,14 +327,14 @@
                 ).withFaceLandmarks().withAgeAndGender();
 
                 if (detections.length === 0) {
-                    showError("Tur ki chehara nai?");
+                    showError("No face detected! Upload another");
                 } else if (detections.length > 1) {
-                    showError("Ettogula manush niye ki koros?");
+                    showError("Ettogula manush keno?");
                 } else {
                     const face = detections[0];
                     const gender = face.gender;
                     const skinTone = getSkinTone(face.detection.box);
-                    const rating = Math.floor(Math.random() * 4) + 7;
+                    const rating = Math.floor(Math.random() * 3) + 4;
                     
                     const options = COMPLIMENTS[gender][skinTone];
                     const compliment = options[Math.floor(Math.random() * options.length)];
